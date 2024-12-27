@@ -1,12 +1,12 @@
 Technologies Used for the project:
 ----------------------------------
 
-c++--> File Handling.(metadata save of image)
+c++--> File Handling(metadata save of image),command line argument
 phython---->Image Processing,bitwise operators. (filter,compression)
 
 Java--->OOPS concept,JPA,Web services,excute other programming script by java,multi-threading.
 
-Front-end--->HTML,CSS,Javascript
+Front-end--->HTML,CSS,Javascript,regex
 
 Framework--->bootstrap,Spring Boot,Hibernate
 
@@ -14,7 +14,7 @@ IDE--->STS(Spring Tool suit),Intellij idea community edition,Vscode,pycharm.
 
 Database--->MYYSQL(Relational Database)
 
-Liberary/dependency--->Spring data JPA,ModelMapper,Spring web service,MYSQL driver,DevTools,lombok,ifstream,reactjs.
+Liberary/dependency--->Spring data JPA,ModelMapper,Spring web service,MYSQL driver,DevTools,ifstream,reactjs,openCv.
 
 AI For Help:- Gemini,chatgpt,Meta.
 
