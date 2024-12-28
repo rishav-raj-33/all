@@ -22,4 +22,6 @@ Build-tools-->maven
 
 packaging-->jar
 
+version control-->github
+
 
