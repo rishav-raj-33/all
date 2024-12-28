@@ -1,0 +1,20 @@
+UI Design
+---------
+
+
+->Responsive ---site
+->Dark/Light Mode Toggle button
+
+Explanation of Each Section in the Navbar:
+---------------------------------------
+Logo: Displays the brand name "Glow" or an image/logo aligned to the left.
+Filters: A link that will take users to the section where they can apply photo filters.
+Built With: A link to the section where users can see which technologies were used to build the app.
+Get in Touch: A link to your social media profiles (Instagram, LinkedIn, GitHub) where users can connect with you.
+
+
+
+=>logo of the APP:  <i class="bi bi-lightbulb-fill"></i>
+=>SVG file:- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightbulb-fill" viewBox="0 0 16 16">
+  <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m3 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1-.5-.5"/>
+</svg>
