@@ -304,3 +304,20 @@ nav.fill ul li a:hover:after {
 
 
 }
+
+
+/* filter description */
+
+
+#photo-content{
+  background-color: var(--color);
+  width: 600px;
+  
+}
+
+#filter-description-div{
+  background-color: var(--bg);
+  margin-top: 100px;
+  padding: 10px;
+
+}

@@ -27,3 +27,9 @@ version control-->github
 UI--->my creativity and AI Consult.
 
 
+
+
+
+->Needed for learning--->Front end Automation testing(selenium) and Backend automation testing(postman)
+
+
