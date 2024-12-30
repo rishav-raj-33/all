@@ -11,6 +11,7 @@
   --scard: #d4d4d4;
   --shawdow1: rgba(0, 0, 0, 0.432);
   --highlight:#146EF5;
+  --touch:#fff;
 }
 
 
@@ -22,6 +23,7 @@
   --scard: #1b1f23;
   --shawdow1: rgba(255, 255, 255, 0.315);
   --highlight:#85532b;
+  --touch: #2C2C2C;
   
 
 }
