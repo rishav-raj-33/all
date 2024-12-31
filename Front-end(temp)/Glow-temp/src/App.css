@@ -529,6 +529,33 @@ a{
   color: var(--color);
 }
 
+.col-md-3{
+  width: fit-content !important;
+}
+
+
+.filter-content-card{
+  
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    
+}
+
+
+
+
+
+#card-main-div{
+
+  height: fit-content;
+}
+
+#row-card{
+  background-color: var(--cbg);
+  padding-top: 100px;
+}
+
 
 /* button */
 

@@ -12,6 +12,7 @@
   --shawdow1: rgba(0, 0, 0, 0.432);
   --highlight:#146EF5;
   --touch:#fff;
+  --cbg:#fff;
 }
 
 
@@ -24,6 +25,7 @@
   --shawdow1: rgba(255, 255, 255, 0.315);
   --highlight:#85532b;
   --touch: #2C2C2C;
+  --cbg:#000000cc;
   
 
 }

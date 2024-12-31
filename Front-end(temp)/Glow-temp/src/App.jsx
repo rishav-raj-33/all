@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import useLocalStorage from 'use-local-storage'
 import './App.css'
 import B_Slogan from '../Components/B_Slogan';
@@ -9,6 +9,8 @@ function App() {
   const [darkTheme, setDarkTheme] = useLocalStorage("darkTheme", false);
 
   return (
+    <>
+    <BrowserRouter>
 
 
 
@@ -25,16 +27,16 @@ function App() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page">Home</a>
+                <Link to={"/"} className="nav-link active" aria-current="page">Home</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page">Filters</a>
+                <Link to={"/filter"} className="nav-link active" aria-current="page">Filters</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page">Built With</a>
+                <Link to={"/"} className="nav-link active" aria-current="page">Built With</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page">Get in Touch</a>
+                <Link to={"/touch"} className="nav-link active" aria-current="page">Get in Touch</Link>
               </li>
             </ul>
 
@@ -56,8 +58,22 @@ function App() {
       </nav>
       <hr className="line"></hr>
 
-      <Card />
+
+      
+
+        <Routes>
+          <Route path="/" element={<B_Slogan />}></Route>
+          <Route path='/touch' element={<Touch />} />
+          <Route path="/filter" element={<Card />} />
+        </Routes>
+      
+
+
+
     </div>
+      </BrowserRouter>
+
+    </>
 
 
 
