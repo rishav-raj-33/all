@@ -1,4 +1,4 @@
-//version:-2 (10.3.1.0.4)  
+//version:-2 (10.4.1.0.4)  
 
 
 Status for the Project:-     
@@ -8,8 +8,8 @@ Status for the Project:-
 1.Front-end part:-
 -----------------
 =>Decided Project Name Glow with the help of AI Discussion.
-=>Created Temp files for created Temp React project setup. (When project Development is over shifted to the Real project files)
-=>Project Set-up completed.
+=>Created Temp files and decided to create Temp React project setup. (When project Development is over shifted to the Real project files)
+=>Temp Project Set-up completed.
 =>Temp GitHub Setup Completed.
 =>Dependency Downloaded ->react-router-dom:- for routing purpose,use-local-storage:-For Storing User Theme(dark,light) choice.
 =>Created UI Design of Pages with the help AI.  
@@ -23,8 +23,9 @@ Status for the Project:-
 ------------
 
 =>Created Temp Spring boot project setup for the Backend. (When project Development is over shifted to the Real project files)
-=>Spring Boot Project   Set-up completed (dependency: ....)
+=>Spring Boot Project   Set-up completed (dependency: devTools,Spring Web, MySql Connector,Spring Data JPA)
 =>Learned and Created rough c++ and python scripts that can be excuted by Java Spring boot. (openCv library-->learned enough to create this project).
+=>Folder Structure is created.
 
 
 3.Automation:-

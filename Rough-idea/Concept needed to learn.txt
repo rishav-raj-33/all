@@ -37,7 +37,7 @@ Challenges:-
 
 ->How to automate API Testing through Postman?
 
-->How to use every skill that i learned so far in a Single project to demonstrate the skill set by one project?
+->How to use every skill that i learned so far in a Single project to all the skill set by one project?
 
 
 
