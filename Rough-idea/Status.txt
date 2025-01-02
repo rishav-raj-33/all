@@ -1,0 +1,71 @@
+//version:-2 (10.3.1.0.4)  
+
+
+Status for the Project:-     
+-----------------------
+
+
+1.Front-end part:-
+-----------------
+=>Decided Project Name Glow with the help of AI Discussion.
+=>Created Temp files for created Temp React project setup. (When project Development is over shifted to the Real project files)
+=>Project Set-up completed.
+=>Temp GitHub Setup Completed.
+=>Dependency Downloaded ->react-router-dom:- for routing purpose,use-local-storage:-For Storing User Theme(dark,light) choice.
+=>Created UI Design of Pages with the help AI.  
+=>Logo is decided with the help of AI.
+=>Developed Responsive Web-pages with Bootstrap and Discussed about the content with the AI.
+=>For Now Dummy API is connected with the Front-End
+=>Rough Front end is ready.
+
+
+2.Back-end part:-
+------------
+
+=>Created Temp Spring boot project setup for the Backend. (When project Development is over shifted to the Real project files)
+=>Spring Boot Project   Set-up completed (dependency: ....)
+=>Learned and Created rough c++ and python scripts that can be excuted by Java Spring boot. (openCv library-->learned enough to create this project).
+
+
+3.Automation:-
+------------
+
+->Learned about Maven Commands,Tomcat Server files.
+
+
+
+ 4.Testing:-
+-----------------
+=>Unit:-
+--------
+
+=>Manual:-
+-----------
+
+=>Automation:-
+----------------
+
+
+
+5.pseudo setup for Deployment:-
+--------------------------------
+
+->Virtual LINUX OS installed in VMWare.
+->By MobaXterm LINUX server is connected by Window Laptop.
+->Learned LINUX Commands.
+->Learned about Shell Scripting
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

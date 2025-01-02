@@ -1,0 +1,48 @@
+->Concept Needed to Learn other than i have learnt so far:-
+-----------------------------------------------------------
+
+Technology Needed :-
+--------------------
+
+->Junit (unit testing)             (theory pending...) (practical pending...)
+
+->OpenCV (python library)        (Learned Enough to Use it in the project)
+
+->log4j (logging framework)    (theory pending...) (practical pending...)
+
+->LINUX (pseudo-remote deploying set-up by VMware)  (completed theory) (practical pending...)
+
+->MobXTerm (connecting LINUX server from Window)    (completed theory) (practical completed)
+
+->Shell scripting (for automation commands)         (completed theory) (practical pending...)
+
+->Git and Git Hub Commands (Source Code Management)  (completed theory) (practical pending...)
+
+
+->Selenium (Front-end Automation Testing)          (theory pending...) (practical pending...)
+
+
+
+
+----------------------------------------------------------------------------------------------------------
+
+
+Challenges:-
+--------------------
+
+
+->How to run different programming script from java Spring Boot?
+
+->How to pass and receive Data from the Scripts to java spring boot?
+
+->How to automate API Testing through Postman?
+
+->How to use every skill that i learned so far in a Single project to demonstrate the skill set by one project?
+
+
+
+
+
+
+
+
