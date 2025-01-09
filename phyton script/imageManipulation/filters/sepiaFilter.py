@@ -5,8 +5,6 @@ image = cv2.imread('../photo/cat.jpeg')
 
 
 
-# Load the image
-image = cv2.imread('image.jpg')
 
 # Create a sepia filter matrix
 sepia_filter = np.array([[0.272, 0.534, 0.131],

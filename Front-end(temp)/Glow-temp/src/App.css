@@ -1,6 +1,10 @@
 /* navigation bar */
 
 
+body{
+  background-color: var(--bg);
+}
+
 #header {
   background-color: var(--bg) !important;
 
@@ -420,7 +424,7 @@ nav.fill ul li a:hover:after {
 #touch {
   height: 100vh;
   background-color: var(--touch);
-  
+
 
 }
 
@@ -430,25 +434,25 @@ nav.fill ul li a:hover:after {
 }
 
 
-a{
+a {
   text-decoration: none;
   color: var(--color);
- 
 
-  
+
+
 }
 
 
 
-#links{
+#links {
   margin-top: 25px;
-  
+
 }
 
-.text-size{
+.text-size {
   font-size: 20px;
   font-family: 'Times New Roman', Times, serif;
-  
+
 }
 
 
@@ -529,29 +533,31 @@ a{
   color: var(--color);
 }
 
-.col-md-3{
+.col-md-3 {
   width: fit-content !important;
 }
 
 
-.filter-content-card{
+/* .filter-content-card{
   
       white-space: nowrap;
-      overflow: hidden;
+      overflow: hidden;            for Extra Word Hiding....
       text-overflow: ellipsis;
     
+} */
+
+
+#card-content {
+  margin: 10px;
 }
 
 
-
-
-
-#card-main-div{
+#card-main-div {
 
   height: fit-content;
 }
 
-#row-card{
+#row-card {
   background-color: var(--cbg);
   padding-top: 100px;
 }
@@ -570,7 +576,7 @@ a{
   transition: all .5s ease-out;
   color: var(--color);
   background-color: var(--color) !important;
-  
+
 
 
 

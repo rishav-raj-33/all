@@ -23,7 +23,7 @@ Status for the Project:-
 ------------
 
 =>Created Temp Spring boot project setup for the Backend. (When project Development is over shifted to the Real project files)
-=>Spring Boot Project   Set-up completed (dependency: devTools,Spring Web, MySql Connector,Spring Data JPA)
+=>Spring Boot Project   Set-up completed (dependency: devTools,Spring Web, MySql Connector,Spring Data JPA,ModalMapper)
 =>Learned and Created rough c++ and python scripts that can be excuted by Java Spring boot. (openCv library-->learned enough to create this project).
 =>Folder Structure is created.
 

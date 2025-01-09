@@ -17,3 +17,7 @@ contrours,hi=c.findContours(edges,c.RETR_LIST,c.CHAIN_APPROX_SIMPLE)
 blank=num.zeros(img.shape,dtype='uint8')
 
 c.drawContours(blank,contrours,-1,(0,0,255),2)
+
+c.imshow('cat', blank)
+
+c.waitKey(0)
