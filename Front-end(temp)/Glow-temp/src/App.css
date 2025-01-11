@@ -1,7 +1,7 @@
 /* navigation bar */
 
 
-body{
+body {
   background-color: var(--bg);
 }
 
@@ -590,4 +590,102 @@ a {
 
 a {
   text-decoration: none;
+}
+
+
+/* Build with */
+
+
+#build-with {
+  padding-top: 50px;
+  padding-left: 30px;
+  background-color: var(--bg);
+}
+
+
+#build-with-title {
+  font-size: 50px;
+  color: var(--color);
+}
+
+
+#title-sub-text {
+  font-size: 20px;
+  color: var(--color);
+}
+
+
+#objective-section {
+  padding-top: 50px;
+
+}
+
+
+#pbjective-title {
+  color: var(--color);
+}
+
+#objective-content {
+  color: var(--color);
+  padding-top: 25px;
+}
+
+#question {
+  color: var(--color);
+
+}
+
+#answer {
+  color: var(--color);
+  padding-top: 20px;
+}
+
+.color {
+  color: var(--color);
+}
+
+#challange {
+  font-size: 30px;
+}
+
+
+#tech--used {
+  text-decoration: underline;
+  margin-top: 30px;
+  font-size: 25px;
+}
+
+
+#tech-content {
+  margin-top: 30px;
+}
+
+
+#lan {
+  width: 30% !important;
+}
+
+#con {
+  width: 30% !important;
+}
+
+#tool {
+  width: 30% !important;
+}
+
+
+@media screen and (max-width: 768px) {
+  #lan {
+    width: 100% !important;
+  }
+
+  #con {
+    width: 100% !important;
+  }
+
+  #tool {
+    width: 100% !important;
+  }
+
+
 }

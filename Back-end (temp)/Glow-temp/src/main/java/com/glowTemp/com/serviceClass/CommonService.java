@@ -19,7 +19,7 @@ public class CommonService {
 	public String encodeImageToBase64(String imageName,String path) {
 	      try {
 	            byte[] imageBytes = Files.readAllBytes(Paths.get(path + imageName));
-	            log.info("Image Coverted into Base 64 form..");
+	            log.info("File Coverted into Base 64 form..");
 	            return Base64.getEncoder().encodeToString(imageBytes);
 	            
 	        } catch (Exception e) {

@@ -2,20 +2,20 @@ package com.glowTemp.com.controllers;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,10 +39,14 @@ public class ApplyFilterController {
 	@Value("${project.getimage}")
 	private String path;
 	
+	@Value("${project.Images}")
+	private String imgPath;
+	
 	private Logger log=LoggerFactory.getLogger(ApplyFilterController.class);
 	
-	@GetMapping("/run/image")
-     public	 ResponseEntity<ImageResponse> metaDataExtractionTest(@RequestParam MultipartFile image) throws ImageProcessingException, IOException, InterruptedException, ExecutionException{
+	@PostMapping("/image/{id}")
+	@CrossOrigin(origins = "http://localhost:5173")
+     public	 ResponseEntity<ImageResponse> metaDataExtractionTest(@RequestParam MultipartFile image,@PathVariable String id) throws ImageProcessingException, IOException, InterruptedException, ExecutionException{
 		
 		 ExecutorService executor = Executors.newFixedThreadPool(2);;
 		 ImageResponse response=new ImageResponse();
@@ -58,40 +62,38 @@ public class ApplyFilterController {
 		   
 		   
 		   
+		   Future<String> future = executor.submit(() -> {
+		   this.applyFilterServiceClass.runPythonScript(image, id, imgPath).get();
+		   String imgFile=this.service.encodeImageToBase64("image.jpeg", imgPath);
+		   log.info("Image File converted into base 64 Form");
+            return  imgFile;
+        });
+		   			  
 		  
-			  
-			  
-		  
-		 response.setTxtFile(future2.get());  
+		 response.setTxtFile(future2.get());
+		 response.setFilterImage(future.get());
 		 this.service.deleteFile(fileName, path);
+		 log.info("Text File Deleted");
+		 this.service.deleteFile("images", imgPath);
+		 log.info("Filter File Deleted");
+		 this.service.deleteFile("temp.jpeg", imgPath);
+		 log.info("Uploaded File Deleted");
 		 String fullPath=image.getOriginalFilename();
-		 log.info(fullPath);
 		 File file=new File(fullPath);
 		 file.delete();
-		 
+		 log.info("Temp File Deleted");
 		   
-		   
-		   
-		 
-//		   Future<String> future = executor.submit(() -> {
-//			   this.applyFilterServiceClass.Record();
-//			   String status="True";
-//	            return  status;
-//	        });
-		 
-
-		   
-//future2.get().toString()
-		   
-		   
-		
-		
-		
 		
 		
 		
 		return new ResponseEntity<>(response,HttpStatus.OK);
 	}
+	
+	
+	
+	
+	
+
 	
 	
 	

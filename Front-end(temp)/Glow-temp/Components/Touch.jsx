@@ -14,12 +14,12 @@ function Touch() {
 
             <div className="row justify-content-center" id="links">
                 <div className="col-12">
-                    <a href="mailto:rishav3330@glow.com"><h6 className="text-center text-size">---💌Email Me--</h6></a>
-                    <a href=""><h6 className="text-center text-size">---🖼️DM on Insta--</h6></a>
+                    <a href="mailto:rishav3330@gmail.com"><h6 className="text-center text-size">---💌Email Me--</h6></a>
+                    <a href="https://www.instagram.com/bankai_rishu_no_baka/"><h6 className="text-center text-size">---🖼️DM on Insta--</h6></a>
                     <a href="tel:+91 9708058822"><h6 className="text-center text-size">---📞 Call me now--</h6></a>
-                    <a href=""><h6 className="text-center text-size">---💼 Let's connect on LinkedIn--</h6></a>
-                    <a href=""><h6 className="text-center text-size">---🐙 Explore my projects on GitHub--</h6></a>
-                  
+                    <a href="https://www.linkedin.com/in/rishav33/"><h6 className="text-center text-size">---💼 Let's connect on LinkedIn--</h6></a>
+                    <a href="https://github.com/rishav-raj-33"><h6 className="text-center text-size">---🐙 Explore my projects on GitHub--</h6></a>
+
 
 
 

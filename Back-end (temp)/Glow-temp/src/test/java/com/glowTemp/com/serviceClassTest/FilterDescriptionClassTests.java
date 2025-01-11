@@ -13,6 +13,7 @@ import org.mockito.MockitoAnnotations;
 import org.modelmapper.ModelMapper;
 import com.glowTemp.com.entity.FilterDescriptionEntity;
 import com.glowTemp.com.repository.FilterDescRepo;
+import com.glowTemp.com.serviceClass.CommonService;
 import com.glowTemp.com.serviceClass.FilterDescriptionClass;
 
 
@@ -27,6 +28,9 @@ public class FilterDescriptionClassTests {
 	
 	@Mock
 	private ModelMapper mapper;
+	
+	@Mock
+	private CommonService service;
 	
 	
 	
@@ -50,7 +54,9 @@ public class FilterDescriptionClassTests {
 		"sepia.jpg"
 	})
 	public void encodeImageToBase64Test(String imageName) {
+		
 		testService.setProperty("demoFilters/");
+		when(service.encodeImageToBase64(imageName, "demoFilters/")).thenReturn("ok");
       assertNotNull(testService.encodeImageToBase64(imageName));
 		
 	}

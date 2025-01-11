@@ -13,10 +13,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Future;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Async;
@@ -30,7 +28,6 @@ import com.drew.metadata.Metadata;
 import com.drew.metadata.Tag;
 import com.glowTemp.com.Resources.AppConstants;
 import com.glowTemp.com.Resources.MetaData;
-import com.glowTemp.com.payloads.ImageResponse;
 import com.glowTemp.com.service.ApplyFilterService;
 
 
@@ -40,11 +37,16 @@ public class ApplyFilterServiceClass implements ApplyFilterService {
 	
 	private Logger log=LoggerFactory.getLogger(ApplyFilterServiceClass.class);
 	
-
+   
+   
+   
+	
+    @Async("Excutor-Config")
 	@Override
-	public void runPythonScript(String path,MultipartFile file,ImageResponse response) throws IOException {
-	String fileName=this.uploadImage(path, file);
-		
+	public Future<String> runPythonScript(MultipartFile file,String id,String path) throws IOException {
+	this.uploadImage(path, file);
+	String output=this.pythonScript(id);
+		return CompletableFuture.completedFuture(output);
 	}
 
 	
@@ -139,7 +141,7 @@ public class ApplyFilterServiceClass implements ApplyFilterService {
 	        e.printStackTrace();
 	        log.error("Exception Occured in Run Excutable Method while running c++ script",e.getMessage());
 	    }
-		return null;
+		return "Exception";
 	}
 	
 	
@@ -184,16 +186,73 @@ public class ApplyFilterServiceClass implements ApplyFilterService {
 	 
 	 
 		private String uploadImage(String path, MultipartFile file) throws IOException {
-			String name=file.getOriginalFilename();
-			String generatedFileId=UUID.randomUUID().toString();
-			String generatedFileName=generatedFileId.concat(name.substring(name.lastIndexOf(".")));
-			String filePath=path+File.separator+generatedFileName;
+			
+			String filePath=path+File.separator+"temp.jpeg";
 			File fileFolder=new File(path);
 			if(!fileFolder.exists()) {
 				fileFolder.mkdir();
 			}
 			Files.copy(file.getInputStream(),Paths.get(filePath));
-			return generatedFileName;
+			return filePath;
+		}
+		
+		
+		
+
+		
+		
+		
+		private String pythonScript(String id) {
+			
+		    StringBuilder errorOutput = new StringBuilder();
+			
+			String pythonScriptPath = "scripts/ImageProcessor.py"; 
+		        List<String> command = new ArrayList<>();
+		        
+		        command.add("python"); 
+		        command.add(pythonScriptPath);
+		        command.add(id); // Add arguments
+
+		        try {
+		            ProcessBuilder processBuilder = new ProcessBuilder(command);
+		     
+		            processBuilder.redirectErrorStream(false);
+		            Process process = processBuilder.start();
+		            
+		            BufferedReader errorReader = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+		            String line1;
+		            while ((line1 = errorReader.readLine()) != null) {
+		                errorOutput.append(line1).append("\n");
+		            }
+		            // Capture output
+		            StringBuilder output = new StringBuilder();
+		            try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
+		                String line;
+		                while ((line = reader.readLine()) != null) {
+		                    output.append(line).append("\n");
+		                }
+		                
+		                
+		            }
+
+		            // Wait for the process to finish
+		            int exitCode = process.waitFor();
+		            if (exitCode == 0) {
+		            	log.info("Python script excuted....");
+		                return "Python script output:\n" + output.toString();  
+		            } else {
+		            	 log.error("Python script failed with exit code {}. Error output: {}", exitCode, errorOutput.toString());
+		                return "Python script failed with exit code " + exitCode;
+		                
+		            }
+
+		        } catch (Exception e) {
+		        	log.error("Exception Occured while Running Python Scripts....");
+		            return "Error running Python script: " + e.getMessage();
+		        }
+		    }
+		
+		
 		}
 	 
 	 
@@ -208,6 +267,6 @@ public class ApplyFilterServiceClass implements ApplyFilterService {
 
 
 
-}
+
 
 
