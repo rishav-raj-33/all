@@ -122,8 +122,7 @@ function Build() {
                             NumPy is used in Python to create a blank image as the base for applying filters to images, providing a foundation for further image manipulation.</p>
                         <p className="text-center color"><b>meta data extractor: </b>
                             metadata-extractor is used for extracting and parsing image metadata, enabling efficient retrieval of details such as camera settings, date, and resolution from image files.</p>
-                        <p className="text-center color"><b>Swagger: </b>
-                            Swagger is used to document and visualize the RESTful API endpoints, providing a user-friendly interface for interacting with the backend services and testing the API.</p>
+
 
 
                     </div>

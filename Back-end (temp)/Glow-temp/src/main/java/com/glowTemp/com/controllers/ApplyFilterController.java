@@ -74,7 +74,7 @@ public class ApplyFilterController {
 		 response.setFilterImage(future.get());
 		 this.service.deleteFile(fileName, path);
 		 log.info("Text File Deleted");
-		 this.service.deleteFile("images", imgPath);
+		 this.service.deleteFile("image.jpeg", imgPath);
 		 log.info("Filter File Deleted");
 		 this.service.deleteFile("temp.jpeg", imgPath);
 		 log.info("Uploaded File Deleted");
