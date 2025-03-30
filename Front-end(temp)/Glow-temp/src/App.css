@@ -694,22 +694,78 @@ a {
 /* Loader */
 
 
-#Spinner{
-      display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 70vh;
+#Spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
 }
 
 
-#spinner-parent{
-      position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(10px);
-        z-index: 9999;
-        pointer-events: all;
+#spinner-parent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  pointer-events: all;
+}
+
+
+
+
+
+/* Shimmer effect */
+
+.img-div {
+
+  height: 200px !important;
+  width: 100% !important;
+
+
+}
+
+.text{
+  width: 100% !important;
+  height: 16px !important;
+}
+
+
+.input{
+  width: 30%;
+  height: 16px;
+}
+
+.button{
+  width: 100%;
+  height: 50px;
+  margin-top: 2px;
+}
+
+
+.shimmer-border{
+  border: 3px solid var(--bg);
+}
+
+
+
+
+.shimmer {
+  background: linear-gradient(90deg, var(--shimmer1) 25%, var(--shimmer2) 50%, var(--shimmer3) 75%);
+  background-size: 200% 100%;
+  animation: shimmer-animation 1.5s infinite;
+
+}
+
+@keyframes shimmer-animation {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }

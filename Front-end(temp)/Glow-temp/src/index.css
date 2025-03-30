@@ -13,6 +13,12 @@
   --highlight:#146EF5;
   --touch:#fff;
   --cbg:#fff;
+
+  --shimmer1:#e0e0e0;
+  --shimmer2:#f0f0f0;
+  --shimmer3:#e0e0e0;
+
+
 }
 
 
@@ -26,6 +32,10 @@
   --highlight:#85532b;
   --touch: #2C2C2C;
   --cbg:#000000cc;
+
+  --shimmer1:#333;
+  --shimmer2:#444;
+  --shimmer3:#333;
   
 
 }

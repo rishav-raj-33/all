@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import axios from "axios";
 import Loader from './Loader';
+import FilterSkeleton from './Skeleton/FilterSkeleton';
 
 
 
@@ -15,9 +16,11 @@ function Card() {
     const [imageData, setImageData] = useState();
     const [dataFetched, setDataFetched] = useState(false);
     const [isBlocked, setIsBlocked] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false);
 
 
     useEffect(() => {
+        setIsLoaded(false);
         fetch('http://localhost:8080/api/filter/all')
             .then(res => res.json())
             .then((data) => {
@@ -27,7 +30,7 @@ function Card() {
                 const base64String = product.filterImagePath;
                 const formattedBase64 = `data:${imageType};base64,${base64String}`;
                 setImageData(formattedBase64);
-
+                setIsLoaded(true);
             }
             )
             .catch((error) => {
@@ -59,7 +62,7 @@ function Card() {
                     "Content-Type": "multipart/form-data", // Specify that it's a file upload
                 },
             });
-            
+
             const getJpeg = response.data.filterImage;
             const getTxt = response.data.txtFile;
             const jpegBlob = base64ToBlob(getJpeg, 'image/jpeg');
@@ -104,39 +107,43 @@ function Card() {
     return (
 
         <>
-            { isBlocked ? (<Loader/>) :
-( <div className='container-fluid' id='card-main-div'>
-            <div className="row justify-content-evenly" id='row-card'>
-                {
-                    product.map((element) => {
-                        return (
-                            <div className="col-md-3 mt-3" key={element.id} id='card-div'>
+            {!isLoaded ? (<FilterSkeleton />) :
 
-                                <div className="card" id='card-content'>
-                                    <img src={`data:image/jpeg;base64,${element.filterImagePath}`} className="card-img-top img-fluid" alt="processing image" id="process-logo" />
-                                    <div className="card-body justify-content-center">
-                                        <h5 className="card-title filter-content-card">{element.filterName}</h5>
-                                        <p className="card-text text-start filter-content-card" >{element.filterDescription}
-                                        </p>
-                                    </div>
-                                    <input type="file" accept="image/jpeg, image/png" id={element.id} onChange={handleFile} />
-                                    <button className='btn-hover' onClick={Upload}>Upload</button>
+                (isBlocked ? (<Loader />) :
+                    (<div className='container-fluid' id='card-main-div'>
+                        <div className="row justify-content-evenly" id='row-card'>
+                            {
+                                product.map((element) => {
+                                    return (
+                                        <div className="col-md-3 mt-3" key={element.id} id='card-div'>
 
-                                </div>
-                            </div>
-                        )
+                                            <div className="card" id='card-content'>
+                                                <img src={`data:image/jpeg;base64,${element.filterImagePath}`} className="card-img-top img-fluid" alt="processing image" id="process-logo" />
+                                                <div className="card-body justify-content-center">
+                                                    <h5 className="card-title filter-content-card">{element.filterName}</h5>
+                                                    <p className="card-text text-start filter-content-card" >{element.filterDescription}
+                                                    </p>
+                                                </div>
+                                                <input type="file" accept="image/jpeg, image/png" id={element.id} onChange={handleFile} />
+                                                <button className='btn-hover' onClick={Upload}>Upload</button>
 
-                    })
+                                            </div>
+                                        </div>
+                                    )
+
+                                })
 
 
-                }
+                            }
 
-            </div>
-        </div>
-)
-}
-</>
-        
+                        </div>
+                    </div>
+                    )
+                )
+            }
+
+        </>
+
     )
 }
 
