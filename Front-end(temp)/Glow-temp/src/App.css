@@ -715,10 +715,43 @@ a {
 }
 
 
+/* Shimmer build effect */
+
+.heading-shimmer {
+  
+ 
+  width: 226px;
+  height: 60px;
+  margin-top: 5px;
+  
+}
+
+.center{
+  
+  margin: 0 auto;
+  margin-bottom: 5px;
+  height: 70px !important;
+ 
+
+}
+
+.sub-heading{
+  width: 100%;
+  height: 25px;
+}
+
+
+.text-sub-heading{
+  width: 50% !important;
+  height: 20px;
+}
 
 
 
-/* Shimmer effect */
+
+
+
+/* Shimmer card effect */
 
 .img-div {
 
@@ -728,29 +761,29 @@ a {
 
 }
 
-.text{
+.text {
   width: 100% !important;
   height: 16px !important;
 }
 
 
-.input{
+.input {
   width: 30%;
   height: 16px;
 }
 
-.button{
+.button {
   width: 100%;
   height: 50px;
   margin-top: 2px;
 }
 
 
-.shimmer-border{
+.shimmer-border {
   border: 3px solid var(--bg);
 }
 
-
+/* Shimmer effect */
 
 
 .shimmer {
