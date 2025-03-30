@@ -1,8 +1,31 @@
+import { useState } from 'react';
+import { useEffect } from 'react';
+import TouchSkeleton from './Skeleton/TouchSkeleton';
+
 function Touch() {
 
 
+
+    const [isDelay, setIsDelay] = useState(true);
+    
+    
+        useEffect(() => {
+            const timer = setTimeout(() => {
+                setIsDelay(false);
+            }, 3000); 
+    
+            return () => clearTimeout(timer); 
+        }, []);
+
+
     return (
-        <div className="container-fluid" id="touch">
+        <>
+
+        {
+
+                isDelay ? (<TouchSkeleton />) :            
+            
+        (< div className = "container-fluid" id = "touch" >
 
             <div className="row justify-content-center">
 
@@ -31,7 +54,9 @@ function Touch() {
 
 
 
-        </div>
+        </div >)
+        }
+        </>
 
     )
 }

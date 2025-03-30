@@ -783,6 +783,22 @@ a {
   border: 3px solid var(--bg);
 }
 
+
+/* Shimmer touch effect */
+
+
+.touch-center{
+  width: 30% !important;
+}
+
+
+.touch-sub-heading{
+  width: 50%;
+  height: 20px !important;
+}
+
+
+
 /* Shimmer effect */
 
 

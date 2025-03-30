@@ -5,8 +5,7 @@ import B_Slogan from '../Components/B_Slogan';
 import Touch from '../Components/Touch';
 import Card from '../Components/Card';
 import Build from '../Components/Build';
-import FilterSkeleton from '../Components/Skeleton/FilterSkeleton';
-import BuildSkeleton from '../Components/Skeleton/BuildSkeleton';
+import TouchSkeleton from '../Components/Skeleton/TouchSkeleton';
 
 
 function App() {
@@ -70,7 +69,6 @@ function App() {
             <Route path='/touch' element={<Touch />} />
             <Route path="/filter" element={<Card />} />
             <Route path="/build" element={<Build />} />
-            <Route path='/skeleton' element={<BuildSkeleton />} />
           </Routes>
 
 
