@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
 import axios from "axios";
+import Loader from './Loader';
 
 
 
@@ -13,6 +14,7 @@ function Card() {
     let [id, setId] = useState(null);
     const [imageData, setImageData] = useState();
     const [dataFetched, setDataFetched] = useState(false);
+    const [isBlocked, setIsBlocked] = useState(false);
 
 
     useEffect(() => {
@@ -51,11 +53,13 @@ function Card() {
         formData.append("image", file); // Append the file to FormData
 
         try {
+            setIsBlocked(true);
             const response = await axios.post("http://localhost:8080/api/apply/image/" + id, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data", // Specify that it's a file upload
                 },
             });
+            
             const getJpeg = response.data.filterImage;
             const getTxt = response.data.txtFile;
             const jpegBlob = base64ToBlob(getJpeg, 'image/jpeg');
@@ -64,8 +68,10 @@ function Card() {
             const txtFile = new File([txtBlob], 'file.txt', { type: 'text/plain' });
             downloadFile(jpegFile);
             downloadFile(txtFile)
+            setIsBlocked(false);
             console.log(" File Downloading successfully...");
         } catch (error) {
+            setIsBlocked(false);
             console.error("Error uploading file:", error);
         }
     }
@@ -97,8 +103,9 @@ function Card() {
 
     return (
 
-
-        <div className='container-fluid' id='card-main-div'>
+        <>
+            { isBlocked ? (<Loader/>) :
+( <div className='container-fluid' id='card-main-div'>
             <div className="row justify-content-evenly" id='row-card'>
                 {
                     product.map((element) => {
@@ -124,13 +131,12 @@ function Card() {
 
                 }
 
-
-
-
-
             </div>
         </div>
-
+)
+}
+</>
+        
     )
 }
 

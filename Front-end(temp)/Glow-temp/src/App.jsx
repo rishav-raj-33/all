@@ -5,6 +5,7 @@ import B_Slogan from '../Components/B_Slogan';
 import Touch from '../Components/Touch';
 import Card from '../Components/Card';
 import Build from '../Components/Build';
+import Loader from '../Components/Loader';
 
 function App() {
   const [darkTheme, setDarkTheme] = useLocalStorage("darkTheme", false);
@@ -67,6 +68,7 @@ function App() {
             <Route path='/touch' element={<Touch />} />
             <Route path="/filter" element={<Card />} />
             <Route path="/build" element={<Build />} />
+
 
           </Routes>
 
