@@ -6,6 +6,7 @@ import Touch from '../Components/Touch';
 import Card from '../Components/Card';
 import Build from '../Components/Build';
 import TouchSkeleton from '../Components/Skeleton/TouchSkeleton';
+import B_SloganSkeleton from '../Components/Skeleton/B_SloganSkeleton';
 
 
 function App() {

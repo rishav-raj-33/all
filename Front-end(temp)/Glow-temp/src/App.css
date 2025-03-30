@@ -215,6 +215,7 @@ nav.fill ul li a:hover:after {
 #slogan {
   background-color: var(--bg);
   width: 100%;
+  
 
 
 }
@@ -324,7 +325,8 @@ nav.fill ul li a:hover:after {
 
 #description-content {
   width: 600px;
-  height: 500px;
+  height: fit-content;
+  
 
 
 
@@ -795,6 +797,31 @@ a {
 .touch-sub-heading{
   width: 50%;
   height: 20px !important;
+}
+
+
+
+/* Shimmer Slogan effect */
+
+
+.heading-slogan{
+  width: 30%;
+  margin: 0 auto;
+  padding-top: 10%;
+}
+
+.sub-heading-slogan{
+  width: 50%;
+  height: 20px;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+
+.paagraph-slogan {
+  width: 80%;
+  height: 20px;
+  margin: 0 auto;
+  margin-top: 5px;
 }
 
 
