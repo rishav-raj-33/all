@@ -17,6 +17,7 @@ function Card() {
     const [dataFetched, setDataFetched] = useState(false);
     const [isBlocked, setIsBlocked] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [selectedCard, setSelectedCard] = useState(null);
 
 
     useEffect(() => {
@@ -39,9 +40,11 @@ function Card() {
     }, [dataFetched]);
 
 
-    function handleFile(event) {
+    function handleFile(event, id) {
         const selectedFile = event.target.files[0];
         const selectedId = event.target.id;
+        setSelectedCard(id);
+
         if (selectedFile) {
             setFile(selectedFile);
             setId(selectedId);
@@ -72,7 +75,7 @@ function Card() {
             downloadFile(jpegFile);
             downloadFile(txtFile)
             setIsBlocked(false);
-            console.log(" File Downloading successfully...");
+            console.log(" File Downloaded successfully...");
         } catch (error) {
             setIsBlocked(false);
             console.error("Error uploading file:", error);
@@ -124,9 +127,10 @@ function Card() {
                                                     <p className="card-text text-start filter-content-card" >{element.filterDescription}
                                                     </p>
                                                 </div>
-                                                <input type="file" accept="image/jpeg, image/png" id={element.id} onChange={handleFile} />
-                                                <button className='btn-hover' onClick={Upload}>Upload</button>
-
+                                                <input type="file" accept="image/jpeg, image/png" id={element.id} onChange={(e) => handleFile(e, element.id)} />
+                                                {selectedCard === element.id && (
+                                                    <button className='btn-hover' onClick={Upload}>Upload</button>
+                                                )}
                                             </div>
                                         </div>
                                     )
